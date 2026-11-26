@@ -1,0 +1,779 @@
+[
+ {
+  "id": "hawas",
+  "kind": "perfume",
+  "nameEn": "Rasasi Hawas",
+  "nameAr": "رصاصي هوس",
+  "aliases": [
+   "rasasi hawas",
+   "hawas",
+   "rasasi",
+   "رصاصي هوس",
+   "هوس",
+   "رصاصي"
+  ],
+  "gender": "men",
+  "notes": [
+   "fresh",
+   "aquatic",
+   "sweet"
+  ],
+  "size": "",
+  "price": 18.9,
+  "stock": "in",
+  "descEn": "Fresh aquatic scent, great daily wear.",
+  "descAr": "عطر منعش مائي، ممتاز للاستخدام اليومي."
+ },
+ {
+  "id": "asad",
+  "kind": "perfume",
+  "nameEn": "Lattafa Asad",
+  "nameAr": "لطافة أسد",
+  "aliases": [
+   "lattafa asad",
+   "asad",
+   "lattafa",
+   "لطافة اسد",
+   "لطافة أسد",
+   "اسد",
+   "أسد",
+   "لطافة"
+  ],
+  "gender": "men",
+  "notes": [
+   "sweet",
+   "spicy",
+   "vanilla"
+  ],
+  "size": "",
+  "price": 12.5,
+  "stock": "in",
+  "descEn": "Bold sweet-spicy scent at a friendly price.",
+  "descAr": "عطر جريء حلو وتوابل بسعر مناسب."
+ },
+ {
+  "id": "shaghaf",
+  "kind": "perfume",
+  "nameEn": "Swiss Arabian Shaghaf Oud",
+  "nameAr": "سويس أربيان شغف عود",
+  "aliases": [
+   "shaghaf oud",
+   "shaghaf",
+   "swiss arabian",
+   "شغف عود",
+   "شغف",
+   "سويس اربيان",
+   "سويس أربيان"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "oud",
+   "sweet",
+   "rose"
+  ],
+  "size": "",
+  "price": 28.5,
+  "stock": "in",
+  "descEn": "Sweet rose oud, a popular gift.",
+  "descAr": "عود وردي حلو، هدية شائعة."
+ },
+ {
+  "id": "royal-oud",
+  "kind": "perfume",
+  "nameEn": "Arabian Oud Royal",
+  "nameAr": "العربية للعود رويال",
+  "aliases": [
+   "arabian oud royal",
+   "royal oud",
+   "arabian oud",
+   "العربية للعود",
+   "عود رويال",
+   "رويال عود"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "oud",
+   "woody",
+   "amber"
+  ],
+  "size": "",
+  "price": 45,
+  "stock": "in",
+  "descEn": "Rich Arabian oud with warm woods.",
+  "descAr": "عود عربي غني مع خشب دافئ."
+ },
+ {
+  "id": "reflection",
+  "kind": "perfume",
+  "nameEn": "Amouage Reflection Man",
+  "nameAr": "أمواج رفلكشن مان",
+  "aliases": [
+   "amouage reflection",
+   "reflection man",
+   "reflection",
+   "amouage",
+   "امواج رفلكشن",
+   "أمواج رفلكشن",
+   "رفلكشن",
+   "امواج",
+   "أمواج"
+  ],
+  "gender": "men",
+  "notes": [
+   "fresh",
+   "floral",
+   "citrus"
+  ],
+  "size": "",
+  "price": 85,
+  "stock": "in",
+  "descEn": "Omani luxury house. Fresh, clean and elegant.",
+  "descAr": "دار عُمانية فاخرة. عطر منعش وأنيق."
+ },
+ {
+  "id": "white-musk",
+  "kind": "perfume",
+  "nameEn": "White Musk Attar",
+  "nameAr": "عطر المسك الأبيض",
+  "aliases": [
+   "white musk",
+   "musk attar",
+   "musk",
+   "مسك ابيض",
+   "المسك الأبيض",
+   "مسك أبيض",
+   "مسك"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "musk",
+   "fresh",
+   "clean"
+  ],
+  "size": "",
+  "price": 14,
+  "stock": "in",
+  "descEn": "Clean white musk attar, light and soft.",
+  "descAr": "مسك أبيض نظيف، خفيف وناعم."
+ },
+ {
+  "id": "sauvage",
+  "kind": "perfume",
+  "nameEn": "Dior Sauvage",
+  "nameAr": "ديور سوفاج",
+  "aliases": [
+   "dior sauvage",
+   "sauvage",
+   "ديور سوفاج",
+   "سوفاج"
+  ],
+  "gender": "men",
+  "notes": [
+   "fresh",
+   "spicy",
+   "citrus"
+  ],
+  "size": "",
+  "price": 58,
+  "stock": "limited",
+  "descEn": "Fresh spicy bestseller. Limited bottles.",
+  "descAr": "عطر منعش وتوابل. كمية محدودة."
+ },
+ {
+  "id": "coco",
+  "kind": "perfume",
+  "nameEn": "Chanel Coco Mademoiselle",
+  "nameAr": "شانيل كوكو مادموزيل",
+  "aliases": [
+   "coco mademoiselle",
+   "mademoiselle",
+   "coco chanel",
+   "chanel coco",
+   "كوكو مادموزيل",
+   "مادموزيل"
+  ],
+  "gender": "women",
+  "notes": [
+   "sweet",
+   "floral",
+   "citrus"
+  ],
+  "size": "",
+  "price": 65,
+  "stock": "in",
+  "descEn": "Bright floral-citrus French classic.",
+  "descAr": "كلاسيكية فرنسية زهرية حمضية."
+ },
+ {
+  "id": "seiko",
+  "kind": "watch",
+  "nameEn": "Seiko Presage Cocktail",
+  "nameAr": "سيكو بريساج كوكتيل",
+  "aliases": [
+   "seiko presage",
+   "presage",
+   "seiko",
+   "سيكو بريساج",
+   "بريساج",
+   "سيكو"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "automatic",
+   "steel"
+  ],
+  "size": "",
+  "price": 145,
+  "stock": "in",
+  "descEn": "Japanese automatic dress watch.",
+  "descAr": "ساعة يابانية أوتوماتيك أنيقة."
+ },
+ {
+  "id": "casio",
+  "kind": "watch",
+  "nameEn": "Casio Edifice",
+  "nameAr": "كاسيو إدفيس",
+  "aliases": [
+   "casio edifice",
+   "edifice",
+   "casio",
+   "كاسيو ادفيس",
+   "كاسيو إدفيس",
+   "ادفيس",
+   "كاسيو"
+  ],
+  "gender": "men",
+  "notes": [
+   "chronograph",
+   "steel"
+  ],
+  "size": "",
+  "price": 49,
+  "stock": "in",
+  "descEn": "Sporty chronograph, everyday watch.",
+  "descAr": "كرونوغراف رياضي للاستخدام اليومي."
+ },
+ {
+  "id": "citizen",
+  "kind": "watch",
+  "nameEn": "Citizen Eco-Drive",
+  "nameAr": "سيتيزن إكو درايف",
+  "aliases": [
+   "citizen eco drive",
+   "eco-drive",
+   "eco drive",
+   "citizen",
+   "سيتيزن",
+   "اكو درايف",
+   "إكو درايف"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "solar",
+   "steel"
+  ],
+  "size": "",
+  "price": 89,
+  "stock": "in",
+  "descEn": "Solar-powered, no battery changes.",
+  "descAr": "تعمل بالطاقة الشمسية، بدون تغيير بطارية."
+ },
+ {
+  "id": "tissot",
+  "kind": "watch",
+  "nameEn": "Tissot PRX Quartz",
+  "nameAr": "تيسو بي آر إكس",
+  "aliases": [
+   "tissot prx",
+   "prx",
+   "tissot",
+   "تيسو",
+   "بي ار اكس",
+   "بي آر إكس"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "quartz",
+   "integrated bracelet"
+  ],
+  "size": "",
+  "price": 285,
+  "stock": "limited",
+  "descEn": "Swiss integrated-bracelet classic. Limited stock.",
+  "descAr": "ساعة سويسرية كلاسيكية. كمية محدودة."
+ },
+ {
+  "id": "fossil",
+  "kind": "watch",
+  "nameEn": "Fossil Grant Chronograph",
+  "nameAr": "فوسيل غرانت",
+  "aliases": [
+   "fossil grant",
+   "fossil",
+   "grant chronograph",
+   "فوسيل غرانت",
+   "فوسيل",
+   "غرانت"
+  ],
+  "gender": "men",
+  "notes": [
+   "chronograph",
+   "leather"
+  ],
+  "size": "",
+  "price": 95,
+  "stock": "in",
+  "descEn": "Classic chronograph with a leather strap.",
+  "descAr": "كرونوغراف كلاسيكي بحزام جلد."
+ },
+ {
+  "id": "cabin",
+  "kind": "luggage",
+  "nameEn": "Samsonite Cabin Spinner 55cm",
+  "nameAr": "سامسونايت كابين ٥٥ سم",
+  "aliases": [
+   "samsonite",
+   "cabin spinner",
+   "cabin bag",
+   "cabin suitcase",
+   "carry on",
+   "carry-on",
+   "55cm",
+   "55 cm",
+   "سامسونايت",
+   "كابين",
+   "حقيبة مقصورة",
+   "شنطة كابين"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "cabin",
+   "spinner"
+  ],
+  "size": "cabin",
+  "price": 49,
+  "stock": "in",
+  "descEn": "Carry-on spinner, airline cabin size.",
+  "descAr": "حقيبة مقصورة دوارة، حجم كابين للطيران."
+ },
+ {
+  "id": "medium-case",
+  "kind": "luggage",
+  "nameEn": "American Tourister Medium 68cm",
+  "nameAr": "أمريكان توريستر وسط ٦٨ سم",
+  "aliases": [
+   "american tourister",
+   "tourister",
+   "medium suitcase",
+   "medium luggage",
+   "68cm",
+   "68 cm",
+   "امريكان توريستر",
+   "أمريكان توريستر",
+   "حقيبة وسط",
+   "شنطة وسط"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "medium",
+   "spinner"
+  ],
+  "size": "medium",
+  "price": 42,
+  "stock": "in",
+  "descEn": "Medium checked suitcase for a week away.",
+  "descAr": "حقيبة سفر متوسطة لرحلة أسبوع."
+ },
+ {
+  "id": "large-case",
+  "kind": "luggage",
+  "nameEn": "Delsey Large 76cm",
+  "nameAr": "ديلسي كبيرة ٧٦ سم",
+  "aliases": [
+   "delsey",
+   "large suitcase",
+   "large luggage",
+   "big suitcase",
+   "76cm",
+   "76 cm",
+   "ديلسي",
+   "حقيبة كبيرة",
+   "شنطة كبيرة"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "large",
+   "spinner"
+  ],
+  "size": "large",
+  "price": 65,
+  "stock": "in",
+  "descEn": "Large spinner for family or long trips.",
+  "descAr": "حقيبة كبيرة للعائلة أو السفر الطويل."
+ },
+ {
+  "id": "luggage-set",
+  "kind": "luggage",
+  "nameEn": "VIP 3-Piece Luggage Set",
+  "nameAr": "طقم حقائب في آي بي ٣ قطع",
+  "aliases": [
+   "vip luggage",
+   "luggage set",
+   "3 piece",
+   "3-piece",
+   "three piece set",
+   "في اي بي",
+   "في آي بي",
+   "طقم حقائب",
+   "طقم شنط"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "set",
+   "cabin",
+   "medium",
+   "large"
+  ],
+  "size": "set",
+  "price": 89,
+  "stock": "in",
+  "descEn": "Cabin, medium and large in one set.",
+  "descAr": "طقم من ثلاث حقائب: كابين ووسط وكبيرة."
+ },
+ {
+  "id": "duffel",
+  "kind": "luggage",
+  "nameEn": "Travel Soft Duffel 30L",
+  "nameAr": "حقيبة سفر قماش ٣٠ لتر",
+  "aliases": [
+   "duffel",
+   "duffle",
+   "soft bag",
+   "travel bag",
+   "30l",
+   "حقيبة قماش",
+   "شنطة قماش",
+   "دفل"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "duffel",
+   "cabin"
+  ],
+  "size": "duffel",
+  "price": 12.9,
+  "stock": "in",
+  "descEn": "Light soft bag for a short trip or gym.",
+  "descAr": "حقيبة قماش خفيفة للرحلة القصيرة أو النادي."
+ },
+ {
+  "id": "kids-case",
+  "kind": "luggage",
+  "nameEn": "Kids Ride-On Suitcase",
+  "nameAr": "حقيبة أطفال للركوب",
+  "aliases": [
+   "kids suitcase",
+   "kids luggage",
+   "ride-on",
+   "ride on",
+   "children suitcase",
+   "حقيبة اطفال",
+   "حقيبة أطفال",
+   "شنطة أطفال"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "kids",
+   "cabin"
+  ],
+  "size": "cabin",
+  "price": 18.5,
+  "stock": "in",
+  "descEn": "Fun ride-on case for little travellers.",
+  "descAr": "حقيبة ممتعة يمكن للأطفال ركوبها."
+ },
+ {
+  "id": "tefal-pan",
+  "kind": "cookware",
+  "nameEn": "Tefal Non-stick Frying Pan 28cm",
+  "nameAr": "مقلاة تيفال ٢٨ سم",
+  "aliases": [
+   "tefal pan",
+   "tefal",
+   "frying pan",
+   "fry pan",
+   "non-stick pan",
+   "nonstick pan",
+   "تيفال",
+   "مقلاة تيفال",
+   "مقلاة"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "nonstick",
+   "pan"
+  ],
+  "size": "28cm",
+  "price": 14.5,
+  "stock": "in",
+  "descEn": "Everyday non-stick frying pan, 28 cm.",
+  "descAr": "مقلاة يومية غير لاصقة، ٢٨ سم."
+ },
+ {
+  "id": "prestige-pots",
+  "kind": "cookware",
+  "nameEn": "Prestige Stainless Pot Set 5-pc",
+  "nameAr": "طقم قدور برستيج ٥ قطع",
+  "aliases": [
+   "prestige",
+   "برستيج",
+   "prestige pot",
+   "prestige set",
+   "pot set",
+   "pots and pans",
+   "stainless pot",
+   "برستيج قدور",
+   "طقم قدور",
+   "طقم حلل"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "stainless",
+   "set"
+  ],
+  "size": "5-pc",
+  "price": 29.9,
+  "stock": "in",
+  "descEn": "Five-piece stainless steel pot set.",
+  "descAr": "طقم قدور استانلس من خمس قطع."
+ },
+ {
+  "id": "pyrex",
+  "kind": "cookware",
+  "nameEn": "Pyrex Glass Bakeware Set",
+  "nameAr": "طقم بايركس للخبز",
+  "aliases": [
+   "pyrex",
+   "bakeware",
+   "baking set",
+   "glass dish",
+   "بايركس",
+   "بيركس",
+   "طقم خبز"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "bakeware",
+   "glass"
+  ],
+  "size": "set",
+  "price": 16.5,
+  "stock": "in",
+  "descEn": "Oven-safe glass dishes for baking.",
+  "descAr": "أواني زجاجية للفرن والخبز."
+ },
+ {
+  "id": "pressure",
+  "kind": "cookware",
+  "nameEn": "Prestige Pressure Cooker 5L",
+  "nameAr": "قدر ضغط برستيج ٥ لتر",
+  "aliases": [
+   "prestige",
+   "برستيج",
+   "pressure cooker",
+   "prestige cooker",
+   "pressure pot",
+   "5l cooker",
+   "قدر ضغط",
+   "حله ضغط",
+   "برستيج ضغط"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "pressure",
+   "5L"
+  ],
+  "size": "5L",
+  "price": 24.9,
+  "stock": "in",
+  "descEn": "5 litre pressure cooker for fast meals.",
+  "descAr": "قدر ضغط ٥ لتر للطبخ السريع."
+ },
+ {
+  "id": "cook-set",
+  "kind": "cookware",
+  "nameEn": "Non-stick Cookware Set 7-pc",
+  "nameAr": "طقم طبخ غير لاصق ٧ قطع",
+  "aliases": [
+   "cookware set",
+   "cooking set",
+   "pans set",
+   "7 piece cookware",
+   "7-pc",
+   "طقم طبخ",
+   "طقم أواني",
+   "طقم مواعين"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "nonstick",
+   "set"
+  ],
+  "size": "7-pc",
+  "price": 39.5,
+  "stock": "in",
+  "descEn": "Pots and pans set for a new kitchen.",
+  "descAr": "طقم قدور ومقالي لمطبخ جديد."
+ },
+ {
+  "id": "iron",
+  "kind": "appliance",
+  "nameEn": "Philips Daily Iron",
+  "nameAr": "مكواة فيليبس يومية",
+  "aliases": [
+   "philips iron",
+   "steam iron",
+   "iron",
+   "فيليبس مكواة",
+   "مكواة فيليبس",
+   "مكواة",
+   "مكوه"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "iron",
+   "steam"
+  ],
+  "size": "",
+  "price": 12.9,
+  "stock": "in",
+  "descEn": "Steam iron for everyday clothes.",
+  "descAr": "مكواة بخار للملابس اليومية."
+ },
+ {
+  "id": "blender",
+  "kind": "appliance",
+  "nameEn": "Moulinex Blender 1.5L",
+  "nameAr": "خلاط مولينكس ١.٥ لتر",
+  "aliases": [
+   "moulinex",
+   "blender",
+   "mixer",
+   "smoothie maker",
+   "مولينكس",
+   "خلاط مولينكس",
+   "خلاط"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "blender",
+   "1.5L"
+  ],
+  "size": "1.5L",
+  "price": 18.5,
+  "stock": "in",
+  "descEn": "1.5L blender for juices and shakes.",
+  "descAr": "خلاط ١.٥ لتر للعصائر والسموذي."
+ },
+ {
+  "id": "toaster",
+  "kind": "appliance",
+  "nameEn": "Black+Decker Toaster 2-slice",
+  "nameAr": "محمصة بلاك آند ديكر شريحتين",
+  "aliases": [
+   "black+decker",
+   "black and decker",
+   "black decker",
+   "toaster",
+   "بلاك اند ديكر",
+   "بلاك آند ديكر",
+   "محمصة",
+   "توستر"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "toaster",
+   "2-slice"
+  ],
+  "size": "",
+  "price": 11.9,
+  "stock": "in",
+  "descEn": "Two-slice toaster for a quick breakfast.",
+  "descAr": "محمصة شريحتين للفطور السريع."
+ },
+ {
+  "id": "kettle",
+  "kind": "appliance",
+  "nameEn": "Kenwood Kettle 1.7L",
+  "nameAr": "غلاية كينوود ١.٧ لتر",
+  "aliases": [
+   "kenwood kettle",
+   "kenwood",
+   "electric kettle",
+   "kettle",
+   "كينوود",
+   "غلاية",
+   "كتل"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "kettle",
+   "1.7L"
+  ],
+  "size": "1.7L",
+  "price": 14.9,
+  "stock": "in",
+  "descEn": "1.7 litre electric kettle.",
+  "descAr": "غلاية كهربائية ١.٧ لتر."
+ },
+ {
+  "id": "rice",
+  "kind": "appliance",
+  "nameEn": "Toshiba Rice Cooker 1.8L",
+  "nameAr": "طباخ أرز توشيبا ١.٨ لتر",
+  "aliases": [
+   "toshiba",
+   "rice cooker",
+   "rice maker",
+   "توشيبا",
+   "طباخ ارز",
+   "طباخ أرز",
+   "قدر أرز"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "rice cooker",
+   "1.8L"
+  ],
+  "size": "1.8L",
+  "price": 22.5,
+  "stock": "in",
+  "descEn": "1.8L rice cooker, keep-warm function.",
+  "descAr": "طباخ أرز ١.٨ لتر مع وظيفة التدفئة."
+ },
+ {
+  "id": "sandwich",
+  "kind": "appliance",
+  "nameEn": "Russell Hobbs Sandwich Maker",
+  "nameAr": "صانعة سندويش راسل هوبس",
+  "aliases": [
+   "russell hobbs",
+   "sandwich maker",
+   "sandwich toaster",
+   "grill maker",
+   "راسل هوبس",
+   "صانعة سندويش",
+   "ساندويش ميكر"
+  ],
+  "gender": "unisex",
+  "notes": [
+   "sandwich",
+   "grill"
+  ],
+  "size": "",
+  "price": 13.5,
+  "stock": "in",
+  "descEn": "Toastie maker for quick snacks.",
+  "descAr": "صانعة سندويش للوجبات السريعة."
+ }
+]

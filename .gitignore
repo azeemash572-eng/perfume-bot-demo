@@ -1,3 +1,7 @@
 screenshot*.png
+ms-*.png
+smart-*.png
 .DS_Store
 node_modules/
+__pycache__/
+.env*
