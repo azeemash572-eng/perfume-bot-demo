@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0F3D3C" />
-  <meta name="description" content="Demo WhatsApp shop assistant for a perfume and watch store in Muscat. Sample catalog only. Demo by ASTRA AI." />
-  <title>Oud &amp; Time Demo Store</title>
+  <meta name="description" content="Demo WhatsApp shop assistant for MS Department Store, Qurum, Muscat. Sample catalog only. Demo by ASTRA AI." />
+  <title>MS Department Store</title>
   <style>
     :root {
       --header: #0F3D3C;
@@ -105,6 +105,10 @@
       place-items: center;
       flex: 0 0 auto;
       box-shadow: inset 0 0 0 2px rgba(204, 251, 241, 0.25);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #F7FFFE;
     }
 
     .meta { flex: 1; min-width: 0; }
@@ -364,25 +368,16 @@
       <svg class="back" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <div class="avatar" aria-hidden="true">
-        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-          <path d="M16 4c-2 0-3.5 1.2-3.5 3v2h7V7c0-1.8-1.5-3-3.5-3z" fill="#F7FFFE"/>
-          <rect x="10" y="9" width="12" height="13" rx="3" fill="#F7FFFE"/>
-          <circle cx="16" cy="15.5" r="2.2" fill="#0F3D3C"/>
-          <path d="M16 15.5v5" stroke="#0F3D3C" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M11 25.5h10" stroke="#99F6E4" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M16 23.5v3.5" stroke="#99F6E4" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-      </div>
+      <div class="avatar" aria-hidden="true">MS</div>
       <div class="meta">
-        <h1>Oud &amp; Time Demo Store</h1>
-        <p><span class="dot"></span>Sample catalog · replies instantly</p>
+        <h1>MS Department Store</h1>
+        <p><span class="dot"></span>Qurum · sample catalog · instant</p>
       </div>
     </header>
 
     <div class="banner">
-      <strong>Sample data only</strong> — prices, stock and location are placeholders for this demo.
-      <br />بيانات تجريبية فقط — الأسعار والمخزون والموقع غير حقيقية.
+      <strong>Sample catalog only</strong> — product prices and stock are for this demo.
+      <br />بيانات تجريبية للمنتجات فقط — الأسعار والمخزون غير حقيقية.
     </div>
 
     <main class="chat" id="chat" aria-live="polite"></main>
@@ -404,56 +399,87 @@
   <script>
   (function () {
     const CATALOG = [
-      { id: "reflection", kind: "perfume", nameEn: "Amouage Reflection Man", nameAr: "أمواج رفلكشن مان", aliases: ["amouage reflection", "reflection man", "reflection", "amouage", "امواج رفلكشن", "أمواج رفلكشن", "رفلكشن", "امواج", "أمواج"], gender: "men", notes: ["fresh", "floral", "citrus"], price: 85, stock: "in", descEn: "Omani luxury house. Fresh, clean and elegant.", descAr: "دار عُمانية فاخرة. عطر منعش وأنيق." },
-      { id: "honour", kind: "perfume", nameEn: "Amouage Honour Woman", nameAr: "أمواج هونر وومن", aliases: ["honour woman", "honour", "honor", "amouage honour", "هونر", "أمواج هونر", "امواج هونر"], gender: "women", notes: ["floral", "rose", "incense"], price: 89, stock: "in", descEn: "Floral incense fragrance from Muscat's own house.", descAr: "عطر زهري وبخور من دار أمواج العُمانية." },
-      { id: "royal-oud", kind: "perfume", nameEn: "Arabian Oud Royal", nameAr: "العربية للعود رويال", aliases: ["arabian oud royal", "royal oud", "arabian oud", "العربية للعود", "عود رويال", "رويال عود"], gender: "unisex", notes: ["oud", "woody", "amber"], price: 45, stock: "in", descEn: "Rich Arabian oud with warm woods.", descAr: "عود عربي غني مع خشب دافئ." },
-      { id: "shaghaf", kind: "perfume", nameEn: "Swiss Arabian Shaghaf Oud", nameAr: "سويس أربيان شغف عود", aliases: ["shaghaf oud", "shaghaf", "swiss arabian", "شغف عود", "شغف", "سويس اربيان", "سويس أربيان"], gender: "unisex", notes: ["oud", "sweet", "rose"], price: 28.5, stock: "in", descEn: "Sweet rose oud, a popular gift.", descAr: "عود وردي حلو، هدية شائعة." },
-      { id: "hawas", kind: "perfume", nameEn: "Rasasi Hawas", nameAr: "رصاصي هوس", aliases: ["rasasi hawas", "hawas", "rasasi", "رصاصي هوس", "هوس", "رصاصي"], gender: "men", notes: ["fresh", "aquatic", "sweet"], price: 18.9, stock: "in", descEn: "Fresh aquatic scent, great daily wear.", descAr: "عطر منعش مائي، ممتاز للاستخدام اليومي." },
-      { id: "asad", kind: "perfume", nameEn: "Lattafa Asad", nameAr: "لطافة أسد", aliases: ["lattafa asad", "asad", "lattafa", "لطافة اسد", "لطافة أسد", "اسد", "أسد", "لطافة"], gender: "men", notes: ["sweet", "spicy", "vanilla"], price: 12.5, stock: "in", descEn: "Bold sweet-spicy scent at a friendly price.", descAr: "عطر جريء حلو وتوابل بسعر مناسب." },
-      { id: "amber-oud", kind: "perfume", nameEn: "Al Haramain Amber Oud", nameAr: "الحرمين عنبر عود", aliases: ["al haramain", "haramain", "amber oud", "الحرمين", "عنبر عود", "عنبرعود"], gender: "unisex", notes: ["oud", "amber", "woody"], price: 35, stock: "limited", descEn: "Warm amber and oud, evening wear.", descAr: "عنبر وعود دافئ، مناسب للمساء." },
-      { id: "amber-wood", kind: "perfume", nameEn: "Ajmal Amber Wood", nameAr: "أجمل أمبر وود", aliases: ["ajmal amber wood", "amber wood", "ajmal", "اجمل", "أجمل", "امبر وود"], gender: "unisex", notes: ["woody", "amber", "fresh"], price: 22, stock: "in", descEn: "Smooth woody amber from Ajmal.", descAr: "خشب وعنبر ناعم من أجمل." },
-      { id: "taifi", kind: "perfume", nameEn: "Rose Taifi Attar", nameAr: "عطر ورد طائفي", aliases: ["rose taifi", "taifi", "taifi attar", "rose attar", "ورد طائفي", "طائفي", "عطر ورد", "ورد طايفي"], gender: "women", notes: ["rose", "floral", "attar"], price: 32, stock: "in", descEn: "Traditional Taifi rose attar, oil based.", descAr: "عطر ورد طائفي تقليدي، زيتي." },
-      { id: "white-musk", kind: "perfume", nameEn: "White Musk Attar", nameAr: "عطر المسك الأبيض", aliases: ["white musk", "musk attar", "musk", "مسك ابيض", "المسك الأبيض", "مسك أبيض", "مسك"], gender: "unisex", notes: ["musk", "fresh", "clean"], price: 14, stock: "in", descEn: "Clean white musk attar, light and soft.", descAr: "مسك أبيض نظيف، خفيف وناعم." },
-      { id: "black-oud", kind: "perfume", nameEn: "Black Oud Intense", nameAr: "بلاك عود إنتنس", aliases: ["black oud intense", "black oud", "بلاك عود", "عود انتنس", "عود إنتنس"], gender: "men", notes: ["oud", "leather", "smoky"], price: 55, stock: "in", descEn: "Deep smoky oud with leather.", descAr: "عود دخاني عميق مع لمسة جلد." },
-      { id: "bleu", kind: "perfume", nameEn: "Chanel Bleu de Chanel", nameAr: "شانيل بلو دو شانيل", aliases: ["bleu de chanel", "blue de chanel", "bleu", "chanel bleu", "شانيل بلو", "بلو دو شانيل", "بلو شانيل"], gender: "men", notes: ["fresh", "woody", "citrus"], price: 62, stock: "in", descEn: "Classic French fresh-woody fragrance.", descAr: "عطر فرنسي كلاسيكي منعش وخشبي." },
-      { id: "sauvage", kind: "perfume", nameEn: "Dior Sauvage", nameAr: "ديور سوفاج", aliases: ["dior sauvage", "sauvage", "ديور سوفاج", "سوفاج"], gender: "men", notes: ["fresh", "spicy", "citrus"], price: 58, stock: "limited", descEn: "Fresh spicy bestseller. Limited bottles.", descAr: "عطر منعش وتوابل. كمية محدودة." },
-      { id: "coco", kind: "perfume", nameEn: "Chanel Coco Mademoiselle", nameAr: "شانيل كوكو مادموزيل", aliases: ["coco mademoiselle", "mademoiselle", "coco", "chanel coco", "كوكو مادموزيل", "مادموزيل", "كوكو"], gender: "women", notes: ["sweet", "floral", "citrus"], price: 65, stock: "in", descEn: "Bright floral-citrus French classic.", descAr: "كلاسيكية فرنسية زهرية حمضية." },
-      { id: "jadore", kind: "perfume", nameEn: "Dior J'adore", nameAr: "ديور جادور", aliases: ["j'adore", "jadore", "dior jadore", "جادور", "ديور جادور", "ج ادور"], gender: "women", notes: ["floral", "sweet", "jasmine"], price: 68, stock: "in", descEn: "Luminous jasmine and floral bouquet.", descAr: "باقة زهرية مشرقة مع ياسمين." },
-      { id: "seiko", kind: "watch", nameEn: "Seiko Presage Cocktail", nameAr: "سيكو بريساج كوكتيل", aliases: ["seiko presage", "presage", "seiko", "سيكو بريساج", "بريساج", "سيكو"], gender: "unisex", notes: ["automatic", "steel"], price: 145, stock: "in", descEn: "Japanese automatic dress watch.", descAr: "ساعة يابانية أوتوماتيك أنيقة." },
-      { id: "casio", kind: "watch", nameEn: "Casio Edifice", nameAr: "كاسيو إدفيس", aliases: ["casio edifice", "edifice", "casio", "كاسيو ادفيس", "كاسيو إدفيس", "ادفيس", "كاسيو"], gender: "men", notes: ["chronograph", "steel"], price: 49, stock: "in", descEn: "Sporty chronograph, everyday watch.", descAr: "كرونوغراف رياضي للاستخدام اليومي." },
-      { id: "citizen", kind: "watch", nameEn: "Citizen Eco-Drive", nameAr: "سيتيزن إكو درايف", aliases: ["citizen eco drive", "eco-drive", "eco drive", "citizen", "سيتيزن", "اكو درايف", "إكو درايف"], gender: "unisex", notes: ["solar", "steel"], price: 89, stock: "in", descEn: "Solar-powered, no battery changes.", descAr: "تعمل بالطاقة الشمسية، بدون تغيير بطارية." },
-      { id: "tissot", kind: "watch", nameEn: "Tissot PRX Quartz", nameAr: "تيسو بي آر إكس", aliases: ["tissot prx", "prx", "tissot", "تيسو", "بي ار اكس", "بي آر إكس"], gender: "unisex", notes: ["quartz", "integrated bracelet"], price: 285, stock: "limited", descEn: "Swiss integrated-bracelet classic. Limited stock.", descAr: "ساعة سويسرية كلاسيكية. كمية محدودة." },
-      { id: "fossil", kind: "watch", nameEn: "Fossil Grant Chronograph", nameAr: "فوسيل غرانت", aliases: ["fossil grant", "fossil", "grant chronograph", "فوسيل غرانت", "فوسيل", "غرانت"], gender: "men", notes: ["chronograph", "leather"], price: 95, stock: "in", descEn: "Classic chronograph with a leather strap.", descAr: "كرونوغراف كلاسيكي بحزام جلد." }
+      { id: "hawas", kind: "perfume", nameEn: "Rasasi Hawas", nameAr: "رصاصي هوس", aliases: ["rasasi hawas", "hawas", "rasasi", "رصاصي هوس", "هوس", "رصاصي"], gender: "men", notes: ["fresh", "aquatic", "sweet"], size: "", price: 18.9, stock: "in", descEn: "Fresh aquatic scent, great daily wear.", descAr: "عطر منعش مائي، ممتاز للاستخدام اليومي." },
+      { id: "asad", kind: "perfume", nameEn: "Lattafa Asad", nameAr: "لطافة أسد", aliases: ["lattafa asad", "asad", "lattafa", "لطافة اسد", "لطافة أسد", "اسد", "أسد", "لطافة"], gender: "men", notes: ["sweet", "spicy", "vanilla"], size: "", price: 12.5, stock: "in", descEn: "Bold sweet-spicy scent at a friendly price.", descAr: "عطر جريء حلو وتوابل بسعر مناسب." },
+      { id: "shaghaf", kind: "perfume", nameEn: "Swiss Arabian Shaghaf Oud", nameAr: "سويس أربيان شغف عود", aliases: ["shaghaf oud", "shaghaf", "swiss arabian", "شغف عود", "شغف", "سويس اربيان", "سويس أربيان"], gender: "unisex", notes: ["oud", "sweet", "rose"], size: "", price: 28.5, stock: "in", descEn: "Sweet rose oud, a popular gift.", descAr: "عود وردي حلو، هدية شائعة." },
+      { id: "royal-oud", kind: "perfume", nameEn: "Arabian Oud Royal", nameAr: "العربية للعود رويال", aliases: ["arabian oud royal", "royal oud", "arabian oud", "العربية للعود", "عود رويال", "رويال عود"], gender: "unisex", notes: ["oud", "woody", "amber"], size: "", price: 45, stock: "in", descEn: "Rich Arabian oud with warm woods.", descAr: "عود عربي غني مع خشب دافئ." },
+      { id: "reflection", kind: "perfume", nameEn: "Amouage Reflection Man", nameAr: "أمواج رفلكشن مان", aliases: ["amouage reflection", "reflection man", "reflection", "amouage", "امواج رفلكشن", "أمواج رفلكشن", "رفلكشن", "امواج", "أمواج"], gender: "men", notes: ["fresh", "floral", "citrus"], size: "", price: 85, stock: "in", descEn: "Omani luxury house. Fresh, clean and elegant.", descAr: "دار عُمانية فاخرة. عطر منعش وأنيق." },
+      { id: "white-musk", kind: "perfume", nameEn: "White Musk Attar", nameAr: "عطر المسك الأبيض", aliases: ["white musk", "musk attar", "musk", "مسك ابيض", "المسك الأبيض", "مسك أبيض", "مسك"], gender: "unisex", notes: ["musk", "fresh", "clean"], size: "", price: 14, stock: "in", descEn: "Clean white musk attar, light and soft.", descAr: "مسك أبيض نظيف، خفيف وناعم." },
+      { id: "sauvage", kind: "perfume", nameEn: "Dior Sauvage", nameAr: "ديور سوفاج", aliases: ["dior sauvage", "sauvage", "ديور سوفاج", "سوفاج"], gender: "men", notes: ["fresh", "spicy", "citrus"], size: "", price: 58, stock: "limited", descEn: "Fresh spicy bestseller. Limited bottles.", descAr: "عطر منعش وتوابل. كمية محدودة." },
+      { id: "coco", kind: "perfume", nameEn: "Chanel Coco Mademoiselle", nameAr: "شانيل كوكو مادموزيل", aliases: ["coco mademoiselle", "mademoiselle", "coco chanel", "chanel coco", "كوكو مادموزيل", "مادموزيل"], gender: "women", notes: ["sweet", "floral", "citrus"], size: "", price: 65, stock: "in", descEn: "Bright floral-citrus French classic.", descAr: "كلاسيكية فرنسية زهرية حمضية." },
+      { id: "seiko", kind: "watch", nameEn: "Seiko Presage Cocktail", nameAr: "سيكو بريساج كوكتيل", aliases: ["seiko presage", "presage", "seiko", "سيكو بريساج", "بريساج", "سيكو"], gender: "unisex", notes: ["automatic", "steel"], size: "", price: 145, stock: "in", descEn: "Japanese automatic dress watch.", descAr: "ساعة يابانية أوتوماتيك أنيقة." },
+      { id: "casio", kind: "watch", nameEn: "Casio Edifice", nameAr: "كاسيو إدفيس", aliases: ["casio edifice", "edifice", "casio", "كاسيو ادفيس", "كاسيو إدفيس", "ادفيس", "كاسيو"], gender: "men", notes: ["chronograph", "steel"], size: "", price: 49, stock: "in", descEn: "Sporty chronograph, everyday watch.", descAr: "كرونوغراف رياضي للاستخدام اليومي." },
+      { id: "citizen", kind: "watch", nameEn: "Citizen Eco-Drive", nameAr: "سيتيزن إكو درايف", aliases: ["citizen eco drive", "eco-drive", "eco drive", "citizen", "سيتيزن", "اكو درايف", "إكو درايف"], gender: "unisex", notes: ["solar", "steel"], size: "", price: 89, stock: "in", descEn: "Solar-powered, no battery changes.", descAr: "تعمل بالطاقة الشمسية، بدون تغيير بطارية." },
+      { id: "tissot", kind: "watch", nameEn: "Tissot PRX Quartz", nameAr: "تيسو بي آر إكس", aliases: ["tissot prx", "prx", "tissot", "تيسو", "بي ار اكس", "بي آر إكس"], gender: "unisex", notes: ["quartz", "integrated bracelet"], size: "", price: 285, stock: "limited", descEn: "Swiss integrated-bracelet classic. Limited stock.", descAr: "ساعة سويسرية كلاسيكية. كمية محدودة." },
+      { id: "fossil", kind: "watch", nameEn: "Fossil Grant Chronograph", nameAr: "فوسيل غرانت", aliases: ["fossil grant", "fossil", "grant chronograph", "فوسيل غرانت", "فوسيل", "غرانت"], gender: "men", notes: ["chronograph", "leather"], size: "", price: 95, stock: "in", descEn: "Classic chronograph with a leather strap.", descAr: "كرونوغراف كلاسيكي بحزام جلد." },
+      { id: "cabin", kind: "luggage", nameEn: "Samsonite Cabin Spinner 55cm", nameAr: "سامسونايت كابين ٥٥ سم", aliases: ["samsonite", "cabin spinner", "cabin bag", "cabin suitcase", "carry on", "carry-on", "55cm", "55 cm", "سامسونايت", "كابين", "حقيبة مقصورة", "شنطة كابين"], gender: "unisex", notes: ["cabin", "spinner"], size: "cabin", price: 49, stock: "in", descEn: "Carry-on spinner, airline cabin size.", descAr: "حقيبة مقصورة دوارة، حجم كابين للطيران." },
+      { id: "medium-case", kind: "luggage", nameEn: "American Tourister Medium 68cm", nameAr: "أمريكان توريستر وسط ٦٨ سم", aliases: ["american tourister", "tourister", "medium suitcase", "medium luggage", "68cm", "68 cm", "امريكان توريستر", "أمريكان توريستر", "حقيبة وسط", "شنطة وسط"], gender: "unisex", notes: ["medium", "spinner"], size: "medium", price: 42, stock: "in", descEn: "Medium checked suitcase for a week away.", descAr: "حقيبة سفر متوسطة لرحلة أسبوع." },
+      { id: "large-case", kind: "luggage", nameEn: "Delsey Large 76cm", nameAr: "ديلسي كبيرة ٧٦ سم", aliases: ["delsey", "large suitcase", "large luggage", "big suitcase", "76cm", "76 cm", "ديلسي", "حقيبة كبيرة", "شنطة كبيرة"], gender: "unisex", notes: ["large", "spinner"], size: "large", price: 65, stock: "in", descEn: "Large spinner for family or long trips.", descAr: "حقيبة كبيرة للعائلة أو السفر الطويل." },
+      { id: "luggage-set", kind: "luggage", nameEn: "VIP 3-Piece Luggage Set", nameAr: "طقم حقائب في آي بي ٣ قطع", aliases: ["vip luggage", "luggage set", "3 piece", "3-piece", "three piece set", "في اي بي", "في آي بي", "طقم حقائب", "طقم شنط"], gender: "unisex", notes: ["set", "cabin", "medium", "large"], size: "set", price: 89, stock: "in", descEn: "Cabin, medium and large in one set.", descAr: "طقم من ثلاث حقائب: كابين ووسط وكبيرة." },
+      { id: "duffel", kind: "luggage", nameEn: "Travel Soft Duffel 30L", nameAr: "حقيبة سفر قماش ٣٠ لتر", aliases: ["duffel", "duffle", "soft bag", "travel bag", "30l", "حقيبة قماش", "شنطة قماش", "دفل"], gender: "unisex", notes: ["duffel", "cabin"], size: "duffel", price: 12.9, stock: "in", descEn: "Light soft bag for a short trip or gym.", descAr: "حقيبة قماش خفيفة للرحلة القصيرة أو النادي." },
+      { id: "kids-case", kind: "luggage", nameEn: "Kids Ride-On Suitcase", nameAr: "حقيبة أطفال للركوب", aliases: ["kids suitcase", "kids luggage", "ride-on", "ride on", "children suitcase", "حقيبة اطفال", "حقيبة أطفال", "شنطة أطفال"], gender: "unisex", notes: ["kids", "cabin"], size: "cabin", price: 18.5, stock: "in", descEn: "Fun ride-on case for little travellers.", descAr: "حقيبة ممتعة يمكن للأطفال ركوبها." },
+      { id: "tefal-pan", kind: "cookware", nameEn: "Tefal Non-stick Frying Pan 28cm", nameAr: "مقلاة تيفال ٢٨ سم", aliases: ["tefal pan", "tefal", "frying pan", "fry pan", "non-stick pan", "nonstick pan", "تيفال", "مقلاة تيفال", "مقلاة"], gender: "unisex", notes: ["nonstick", "pan"], size: "28cm", price: 14.5, stock: "in", descEn: "Everyday non-stick frying pan, 28 cm.", descAr: "مقلاة يومية غير لاصقة، ٢٨ سم." },
+      { id: "prestige-pots", kind: "cookware", nameEn: "Prestige Stainless Pot Set 5-pc", nameAr: "طقم قدور برستيج ٥ قطع", aliases: ["prestige", "برستيج", "prestige pot", "prestige set", "pot set", "pots and pans", "stainless pot", "برستيج قدور", "طقم قدور", "طقم حلل"], gender: "unisex", notes: ["stainless", "set"], size: "5-pc", price: 29.9, stock: "in", descEn: "Five-piece stainless steel pot set.", descAr: "طقم قدور استانلس من خمس قطع." },
+      { id: "pyrex", kind: "cookware", nameEn: "Pyrex Glass Bakeware Set", nameAr: "طقم بايركس للخبز", aliases: ["pyrex", "bakeware", "baking set", "glass dish", "بايركس", "بيركس", "طقم خبز"], gender: "unisex", notes: ["bakeware", "glass"], size: "set", price: 16.5, stock: "in", descEn: "Oven-safe glass dishes for baking.", descAr: "أواني زجاجية للفرن والخبز." },
+      { id: "pressure", kind: "cookware", nameEn: "Prestige Pressure Cooker 5L", nameAr: "قدر ضغط برستيج ٥ لتر", aliases: ["prestige", "برستيج", "pressure cooker", "prestige cooker", "pressure pot", "5l cooker", "قدر ضغط", "حله ضغط", "برستيج ضغط"], gender: "unisex", notes: ["pressure", "5L"], size: "5L", price: 24.9, stock: "in", descEn: "5 litre pressure cooker for fast meals.", descAr: "قدر ضغط ٥ لتر للطبخ السريع." },
+      { id: "cook-set", kind: "cookware", nameEn: "Non-stick Cookware Set 7-pc", nameAr: "طقم طبخ غير لاصق ٧ قطع", aliases: ["cookware set", "cooking set", "pans set", "7 piece cookware", "7-pc", "طقم طبخ", "طقم أواني", "طقم مواعين"], gender: "unisex", notes: ["nonstick", "set"], size: "7-pc", price: 39.5, stock: "in", descEn: "Pots and pans set for a new kitchen.", descAr: "طقم قدور ومقالي لمطبخ جديد." },
+      { id: "iron", kind: "appliance", nameEn: "Philips Daily Iron", nameAr: "مكواة فيليبس يومية", aliases: ["philips iron", "steam iron", "iron", "فيليبس مكواة", "مكواة فيليبس", "مكواة", "مكوه"], gender: "unisex", notes: ["iron", "steam"], size: "", price: 12.9, stock: "in", descEn: "Steam iron for everyday clothes.", descAr: "مكواة بخار للملابس اليومية." },
+      { id: "blender", kind: "appliance", nameEn: "Moulinex Blender 1.5L", nameAr: "خلاط مولينكس ١.٥ لتر", aliases: ["moulinex", "blender", "mixer", "smoothie maker", "مولينكس", "خلاط مولينكس", "خلاط"], gender: "unisex", notes: ["blender", "1.5L"], size: "1.5L", price: 18.5, stock: "in", descEn: "1.5L blender for juices and shakes.", descAr: "خلاط ١.٥ لتر للعصائر والسموذي." },
+      { id: "toaster", kind: "appliance", nameEn: "Black+Decker Toaster 2-slice", nameAr: "محمصة بلاك آند ديكر شريحتين", aliases: ["black+decker", "black and decker", "black decker", "toaster", "بلاك اند ديكر", "بلاك آند ديكر", "محمصة", "توستر"], gender: "unisex", notes: ["toaster", "2-slice"], size: "", price: 11.9, stock: "in", descEn: "Two-slice toaster for a quick breakfast.", descAr: "محمصة شريحتين للفطور السريع." },
+      { id: "kettle", kind: "appliance", nameEn: "Kenwood Kettle 1.7L", nameAr: "غلاية كينوود ١.٧ لتر", aliases: ["kenwood kettle", "kenwood", "electric kettle", "kettle", "كينوود", "غلاية", "كتل"], gender: "unisex", notes: ["kettle", "1.7L"], size: "1.7L", price: 14.9, stock: "in", descEn: "1.7 litre electric kettle.", descAr: "غلاية كهربائية ١.٧ لتر." },
+      { id: "rice", kind: "appliance", nameEn: "Toshiba Rice Cooker 1.8L", nameAr: "طباخ أرز توشيبا ١.٨ لتر", aliases: ["toshiba", "rice cooker", "rice maker", "توشيبا", "طباخ ارز", "طباخ أرز", "قدر أرز"], gender: "unisex", notes: ["rice cooker", "1.8L"], size: "1.8L", price: 22.5, stock: "in", descEn: "1.8L rice cooker, keep-warm function.", descAr: "طباخ أرز ١.٨ لتر مع وظيفة التدفئة." },
+      { id: "sandwich", kind: "appliance", nameEn: "Russell Hobbs Sandwich Maker", nameAr: "صانعة سندويش راسل هوبس", aliases: ["russell hobbs", "sandwich maker", "sandwich toaster", "grill maker", "راسل هوبس", "صانعة سندويش", "ساندويش ميكر"], gender: "unisex", notes: ["sandwich", "grill"], size: "", price: 13.5, stock: "in", descEn: "Toastie maker for quick snacks.", descAr: "صانعة سندويش للوجبات السريعة." }
     ];
 
     const SHOP = {
-      hoursEn: "Sat–Thu 10:00 AM – 10:00 PM\nFriday 2:00 PM – 10:00 PM",
-      hoursAr: "السبت–الخميس: ١٠:٠٠ صباحاً – ١٠:٠٠ مساءً\nالجمعة: ٢:٠٠ مساءً – ١٠:٠٠ مساءً",
-      locEn: "Shop 12, Qurum City Centre, Muscat, Oman (placeholder)",
-      locAr: "محل ١٢، مركز قرم سيتي، مسقط، سلطنة عُمان (موقع تجريبي)",
-      wa: "https://wa.me/96890000000?text=" + encodeURIComponent("Hello, I have a question about Oud & Time Demo Store.")
+      hoursEn: "Sat–Wed 10:00 AM – 10:00 PM\nThursday 10:00 AM – 11:00 PM\nFriday 4:30 PM – 11:00 PM",
+      hoursAr: "السبت–الأربعاء: ١٠:٠٠ صباحاً – ١٠:٠٠ مساءً\nالخميس: ١٠:٠٠ صباحاً – ١١:٠٠ مساءً\nالجمعة: ٤:٣٠ مساءً – ١١:٠٠ مساءً",
+      locEn: "651 Way, Qurum, Muscat",
+      locAr: "٦٥١ واي، القرم، مسقط",
+      phoneDisplay: "9679 2580",
+      phoneAr: "٩٦٧٩ ٢٥٨٠",
+      tel: "tel:+96896792580",
+      wa: "https://wa.me/96890000000?text=" + encodeURIComponent("Hello, I have a question about MS Department Store, Qurum.")
     };
 
     const CHIPS = {
       en: [
         { q: "Shop hours", l: "Shop hours" },
         { q: "Gift under 20 rial", l: "Gift under 20 OMR" },
-        { q: "Oud scents", l: "Oud scents" },
-        { q: "For him", l: "For him" },
-        { q: "For her", l: "For her" },
-        { q: "Show catalog", l: "Catalog" },
+        { q: "Luggage sizes", l: "Luggage sizes" },
+        { q: "Cookware sets", l: "Cookware sets" },
+        { q: "Kitchen appliances", l: "Appliances" },
+        { q: "Call store", l: "Call store" },
         { q: "Talk to owner", l: "Talk to owner" }
       ],
       ar: [
         { q: "ساعات العمل", l: "ساعات العمل" },
         { q: "هدية بـ 20 ريال", l: "هدية بـ ٢٠ ريال" },
-        { q: "عطور العود", l: "عطور العود" },
-        { q: "عطور رجالية", l: "رجالي" },
-        { q: "عطور نسائية", l: "نسائي" },
-        { q: "قائمة المنتجات", l: "المنتجات" },
+        { q: "أحجام الحقائب", l: "أحجام الحقائب" },
+        { q: "أطقم الطبخ", l: "أطقم الطبخ" },
+        { q: "أجهزة المطبخ", l: "أجهزة المطبخ" },
+        { q: "اتصل بالمحل", l: "اتصل بالمحل" },
         { q: "تحدث مع المالك", l: "المالك" }
       ]
     };
+
+    const NOTE_AR = {
+      fresh: "منعش", floral: "زهري", citrus: "حمضي", oud: "عود", sweet: "حلو",
+      rose: "ورد", incense: "بخور", aquatic: "مائي", spicy: "توابل", vanilla: "فانيلا",
+      woody: "خشبي", amber: "عنبر", attar: "عطر زيتي", musk: "مسك", clean: "نظيف",
+      smoky: "دخاني", jasmine: "ياسمين", automatic: "أوتوماتيك", steel: "ستانلس",
+      chronograph: "كرونوغراف", solar: "شمسي", quartz: "كوارتز",
+      "integrated bracelet": "سوار متكامل", leather: "جلد", cabin: "كابين",
+      spinner: "دوارة", medium: "وسط", large: "كبيرة", set: "طقم", duffel: "قماش",
+      kids: "أطفال", nonstick: "غير لاصق", pan: "مقلاة", stainless: "استانلس",
+      bakeware: "خبز", glass: "زجاج", pressure: "ضغط", "5L": "٥ لتر",
+      iron: "مكواة", steam: "بخار", blender: "خلاط", "1.5L": "١.٥ لتر",
+      toaster: "محمصة", "2-slice": "شريحتين", kettle: "غلاية", "1.7L": "١.٧ لتر",
+      "rice cooker": "طباخ أرز", "1.8L": "١.٨ لتر", sandwich: "سندويش", grill: "شواء"
+    };
+
+    const KIND_AR = { perfume: "عطور", watch: "ساعات", luggage: "حقائب", cookware: "أواني طبخ", appliance: "أجهزة" };
+    const KIND_EN = { perfume: "Perfume", watch: "Watch", luggage: "Luggage", cookware: "Cookware", appliance: "Appliance" };
 
     const chat = document.getElementById("chat");
     const form = document.getElementById("form");
@@ -520,8 +546,10 @@
     function cardHtml(p, lang) {
       const name = lang === "ar" ? p.nameAr : p.nameEn;
       const desc = lang === "ar" ? p.descAr : p.descEn;
-      const NOTE_AR = { fresh: "منعش", floral: "زهري", citrus: "حمضي", oud: "عود", sweet: "حلو", rose: "ورد", incense: "بخور", aquatic: "مائي", spicy: "توابل", vanilla: "فانيلا", woody: "خشبي", amber: "عنبر", attar: "عطر زيتي", musk: "مسك", clean: "نظيف", smoky: "دخاني", jasmine: "ياسمين", automatic: "أوتوماتيك", steel: "ستانلس", chronograph: "كرونوغراف", solar: "شمسي", quartz: "كوارتز", "integrated bracelet": "سوار متكامل", leather: "جلد" };
-      const noteLabels = p.notes.slice(0, 3).map((n) => `<span class="tag">${escapeHtml(lang === "ar" ? (NOTE_AR[n] || n) : n)}</span>`).join("");
+      const kind = lang === "ar" ? KIND_AR[p.kind] : KIND_EN[p.kind];
+      const noteLabels = p.notes.slice(0, 3).map((n) =>
+        `<span class="tag">${escapeHtml(lang === "ar" ? (NOTE_AR[n] || n) : n)}</span>`
+      ).join("");
       return `<article class="card">
         <div class="card-top">
           <h3>${escapeHtml(name)}</h3>
@@ -530,19 +558,45 @@
         <p>${escapeHtml(desc)}</p>
         <div class="tags">
           <span class="stock ${p.stock}">${stockLabel(p.stock, lang)}</span>
+          <span class="tag">${escapeHtml(kind)}</span>
           ${noteLabels}
         </div>
       </article>`;
     }
 
+    function cards(items, lang) {
+      return `<div class="cards">${items.map((p) => cardHtml(p, lang)).join("")}</div>`;
+    }
+
+    function phoneIcon() {
+      return '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.56 1 1 0 0 1-.25 1.02z"/></svg>';
+    }
+
+    function waIcon() {
+      return '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.5 2 2 6.3 2 11.66c0 1.7.46 3.36 1.34 4.82L2 22l5.7-1.48A10.3 10.3 0 0 0 12.04 21.3C17.6 21.3 22 17 22 11.66 22 6.3 17.6 2 12.04 2zm5.7 14.7c-.24.68-1.4 1.26-1.94 1.3-.5.04-1.12.06-1.8-.11-.42-.11-.95-.31-1.64-.6-2.89-1.25-4.76-4.16-4.9-4.35-.14-.2-1.16-1.54-1.16-2.94 0-1.4.74-2.08 1-2.36.24-.28.64-.4.86-.4h.62c.2 0 .46-.04.72.55.24.58.82 2 .9 2.14.06.14.1.3 0 .48-.08.2-.14.3-.26.46-.14.16-.28.36-.4.48-.14.14-.28.3-.12.56.16.28.7 1.14 1.5 1.84 1.04.9 1.9 1.18 2.18 1.32.28.14.44.12.6-.06.16-.2.7-.8.88-1.08.18-.28.36-.22.62-.12.26.1 1.66.78 1.94.92.28.14.46.22.54.34.08.12.08.68-.16 1.36z"/></svg>';
+    }
+
+    function callButton(lang) {
+      const label = lang === "ar"
+        ? "اتصل بالمحل: " + SHOP.phoneAr
+        : "Call store: " + SHOP.phoneDisplay;
+      const note = lang === "ar"
+        ? "رقم المتجر للاتصال فقط، وليس واتساب."
+        : "Store phone for calls only — this is not a WhatsApp number.";
+      return `<div class="wa-wrap">
+        <a class="wa-btn" dir="ltr" href="${SHOP.tel}">${phoneIcon()} ${escapeHtml(label)}</a>
+        <div class="wa-note">${escapeHtml(note)}</div>
+      </div>`;
+    }
+
     function waButton(lang) {
       const label = lang === "ar" ? "واتساب المالك (تجريبي)" : "WhatsApp the owner (demo)";
       const note = lang === "ar"
-        ? "رقم تجريبي للعرض فقط، لا يوصل لمحل حقيقي."
-        : "Placeholder number for this demo only — it does not reach a real shop.";
+        ? "رقم تجريبي للعرض فقط، لا يوصل لصاحب المحل."
+        : "Placeholder number for this demo only — it does not reach the shop owner.";
       return `<div class="wa-wrap">
         <a class="wa-btn" href="${SHOP.wa}" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.5 2 2 6.3 2 11.66c0 1.7.46 3.36 1.34 4.82L2 22l5.7-1.48A10.3 10.3 0 0 0 12.04 21.3C17.6 21.3 22 17 22 11.66 22 6.3 17.6 2 12.04 2zm5.7 14.7c-.24.68-1.4 1.26-1.94 1.3-.5.04-1.12.06-1.8-.11-.42-.11-.95-.31-1.64-.6-2.89-1.25-4.76-4.16-4.9-4.35-.14-.2-1.16-1.54-1.16-2.94 0-1.4.74-2.08 1-2.36.24-.28.64-.4.86-.4h.62c.2 0 .46-.04.72.55.24.58.82 2 .9 2.14.06.14.1.3 0 .48-.08.2-.14.3-.26.46-.14.16-.28.36-.4.48-.14.14-.28.3-.12.56.16.28.7 1.14 1.5 1.84 1.04.9 1.9 1.18 2.18 1.32.28.14.44.12.6-.06.16-.2.7-.8.88-1.08.18-.28.36-.22.62-.12.26.1 1.66.78 1.94.92.28.14.46.22.54.34.08.12.08.68-.16 1.36z"/></svg>
+          ${waIcon()}
           ${escapeHtml(label)}
         </a>
         <div class="wa-note">${escapeHtml(note)}</div>
@@ -629,18 +683,36 @@
     }
 
     function picksUnder(budget, n) {
-      return CATALOG
+      const eligible = CATALOG
         .filter((p) => p.price <= budget && p.stock !== "out")
-        .sort((a, b) => b.price - a.price)
-        .slice(0, n);
-    }
-
-    function recommend(filterFn) {
-      return CATALOG.filter((p) => p.stock !== "out" && filterFn(p));
+        .sort((a, b) => b.price - a.price);
+      const mixed = [];
+      const seen = new Set();
+      eligible.forEach((p) => {
+        if (!seen.has(p.kind) && mixed.length < n) {
+          mixed.push(p);
+          seen.add(p.kind);
+        }
+      });
+      eligible.forEach((p) => {
+        if (!mixed.includes(p) && mixed.length < n) mixed.push(p);
+      });
+      return mixed;
     }
 
     function want(norm, parts) {
-      return parts.some((p) => norm.includes(p));
+      return parts.some((p) => norm.includes(normalize(p)) || norm.includes(p));
+    }
+
+    function inStock(list) {
+      return list.filter((p) => p.stock !== "out");
+    }
+
+    function hoursText(lang) {
+      if (lang === "ar") {
+        return "أوقات الدوام:\n" + SHOP.hoursAr + "\n\nالعنوان:\n" + SHOP.locAr + "\n\nللاتصال بالمحل: " + SHOP.phoneAr + "\nأسعار المنتجات والمخزون في هذه المحادثة بيانات تجريبية.";
+      }
+      return "Opening hours:\n" + SHOP.hoursEn + "\n\nAddress:\n" + SHOP.locEn + "\n\nTo call the store: " + SHOP.phoneDisplay + "\nProduct prices and stock in this chat are sample data.";
     }
 
     function reply(raw) {
@@ -650,9 +722,15 @@
 
       const isOwner = want(norm, [
         "talk to owner", "speak to owner", "talk to the owner", "contact owner",
-        "manager", "human", "malik se baat", "owner se baat", "owner ko", "malik ko",
-        "تحدث مع المالك", "كلم المالك", "صاحب المحل", "صاحب المتجر", "المالك"
+        "whatsapp", "manager", "human", "malik se baat", "owner se baat", "owner ko", "malik ko",
+        "تحدث مع المالك", "كلم المالك", "صاحب المحل", "صاحب المتجر", "المالك", "واتساب"
       ]) || (want(norm, ["owner", "malik", "مالك"]) && !want(norm, ["oud"]));
+
+      const isCall = want(norm, [
+        "call store", "call the store", "store phone", "phone number", "contact number",
+        "store number", "call karo", "phone do", "number kya",
+        "اتصل بالمحل", "اتصل بالمتجر", "رقم الهاتف", "رقم المحل", "رقم المتجر", "هاتف المحل"
+      ]) || (want(norm, ["call", "phone", "هاتف", "تليفون", "تلفون"]) && !isOwner);
 
       const isGift = want(norm, [
         "gift", "present", "souvenir", "tohfa", "tuhfa", "budget", "under", "below",
@@ -660,10 +738,11 @@
       ]) || /ب\s*ـ?\s*\d/.test(norm) || want(norm, ["سستا", "رخيص", "sasta", "cheap"]);
 
       const isHours = want(norm, [
-        "hour", "timing", "open", "close", "location", "address", "where are you",
-        "where is the shop", "map", "when do you", "when are you", "khulti", "band hai",
-        "kab open", "kahan", "ساع", "الدوام", "تفتح", "تغل", "موقع", "عنوان", "وين", "اين", "مكان",
-        "اوقات", "أوقات"
+        "shop hours", "opening hours", "open hours", "working hours", "hour", "timing",
+        "open", "close", "location", "address", "where are you", "where is the shop",
+        "map", "when do you", "when are you", "khulti", "band hai", "kab open", "kahan",
+        "ساعات العمل", "اوقات العمل", "أوقات العمل", "اوقات الدوام", "أوقات الدوام",
+        "الدوام", "تفتح", "تغلق", "تغل", "موقع", "عنوان", "وين", "اين", "مكان", "اوقات", "أوقات"
       ]);
 
       const isCatalog = want(norm, [
@@ -683,33 +762,55 @@
 
       const genderMen = want(norm, [
         "for him", "for men", "for man", "gents", "mardon", "mardo", "mardana",
-        "رجالي", "للرجال", "رجال", "عطور رجاليه", "عطور رجالية"
+        "رجالي", "للرجال", "عطور رجاليه", "عطور رجالية"
       ]) || /\bmen\b|\bman\b|\bmale\b/.test(norm);
       const genderWomen = want(norm, [
         "for her", "for women", "for woman", "ladies", "aurat", "zanana",
-        "نسائي", "للنساء", "نساء", "بنات", "عطور نسائيه", "عطور نسائية"
+        "نسائي", "للنساء", "بنات", "عطور نسائيه", "عطور نسائية"
       ]) || /\bwomen\b|\bwoman\b|\bfemale\b|\bladies\b/.test(norm);
 
-      const noteOud = want(norm, ["oud scents", "oud scent", "عطور العود", "عود"]) || /\boudh?\b/.test(norm);
-      const noteFresh = want(norm, ["fresh", "citrus", "aquatic", "منعش", "حمضي", "ثلند", "thanda"]);
+      const noteOud = want(norm, ["oud scents", "oud scent", "عطور العود"]) || /\boudh?\b/.test(norm) || norm.includes("عود");
+      const noteFresh = want(norm, ["fresh", "citrus", "aquatic", "منعش", "حمضي", "thanda"]);
       const noteSweet = want(norm, ["sweet", "meetha", "vanilla", "حلو", "فانيلا", "عذب"]);
       const noteFloral = want(norm, ["floral", "flower", "rose", "jasmine", "ورد", "ياسمين", "زهري"]);
-      const noteWatch = want(norm, ["watch", "watches", "clock", "ساعه", "ساعة", "ساعات"]);
+      const noteWatch = want(norm, ["watch", "watches", "clock", "ساعه", "ساعة"]) || (norm.includes("ساعات") && !isHours);
+      const isPerfume = want(norm, ["perfume", "attar", "fragrance", "itr", "itter", "عطر", "عطور", "اطر"]);
+
+      const isLuggage = want(norm, [
+        "luggage", "suitcase", "suitcases", "baggage", "trolley", "cabin bag",
+        "carry on", "carry-on", "travel bag", "duffel", "duffle", "saman",
+        "حقيبه", "حقيبة", "حقائب", "شنطه", "شنطة", "شنط", "احجام الحقائب", "أحجام الحقائب"
+      ]);
+      const sizeCabin = want(norm, ["cabin", "carry on", "carry-on", "small bag", "55cm", "كابين", "مقصوره", "مقصورة", "صغيرة"]);
+      const sizeMedium = want(norm, ["medium", "68cm", "وسط", "متوسطه", "متوسطة"]);
+      const sizeLarge = want(norm, ["large suitcase", "large luggage", "big suitcase", "76cm", "bada suitcase", "كبيره", "كبيرة"]);
+      const sizeSet = want(norm, ["luggage set", "3 piece", "3-piece", "three piece", "طقم حقائب", "طقم شنط"]);
+
+      const isCookware = want(norm, [
+        "cookware", "cooking set", "pot set", "pots", "pans", "frying pan",
+        "pressure cooker", "bakeware", "bartan", "handi",
+        "اواني", "أواني", "طقم طبخ", "اطقم الطبخ", "أطقم الطبخ", "قدور", "مقلاة", "قدر ضغط", "بايركس", "مواعين"
+      ]);
+      const isAppliance = want(norm, [
+        "appliance", "appliances", "blender", "kettle", "toaster", "rice cooker",
+        "sandwich maker", "steam iron", "kitchen appliance", "kitchen appliances",
+        "اجهزه", "أجهزة", "اجهزة المطبخ", "أجهزة المطبخ", "خلاط", "غلاية", "محمصة", "طباخ ارز", "طباخ أرز", "مكواة", "ساندويش"
+      ]);
 
       const products = findProducts(norm);
 
       if (want(norm, ["hi", "hello", "hey", "salam", "salaam", "assalam", "as salam", "good morning",
           "good evening", "good afternoon", "kaise ho", "kya haal", "السلام", "مرحبا", "اهلا", "هلا",
-          "صباح الخير", "مساء الخير"]) && norm.split(" ").length <= 6 && !products.length && !isGift && !isHours) {
+          "صباح الخير", "مساء الخير"]) && norm.split(" ").length <= 6 && !products.length && !isGift && !isHours && !isCall && !isLuggage && !isCookware && !isAppliance) {
         if (lang === "ar") {
           return {
             lang,
-            text: "السلام عليكم ورحمة الله! أهلاً بكم في متجر عود آند تايم التجريبي في مسقط.\nأقدر أساعدكم بالأسعار، التوفر، أفكار الهدايا والتوصيات — بالعربية أو الإنجليزية.\nهذه بيانات تجريبية للعرض فقط. كيف أقدر أخدمكم؟"
+            text: "السلام عليكم ورحمة الله! أهلاً بكم في متجر إم إس ديبارتمنت ستور في القرم، مسقط.\nأقدر أساعدكم بالأسعار، التوفر، أفكار الهدايا، الحقائب، أطقم الطبخ، أجهزة المطبخ، العطور والساعات — بالعربية أو الإنجليزية.\nأسعار المنتجات والمخزون بيانات تجريبية للعرض فقط. كيف أقدر أخدمكم؟"
           };
         }
         return {
           lang,
-          text: "As-salamu alaykum! Welcome to Oud & Time Demo Store in Muscat.\nI can help with prices, stock, gift ideas and recommendations — in English or Arabic.\nThis catalog is sample data for a demo only. How can I help?"
+          text: "As-salamu alaykum! Welcome to MS Department Store, Qurum, Muscat.\nI can help with prices, stock, gift ideas, luggage, cookware, kitchen appliances, perfumes and watches — in English or Arabic.\nProduct prices and stock are sample data for this demo only. How can I help?"
         };
       }
 
@@ -717,33 +818,34 @@
         if (lang === "ar") {
           return {
             lang,
-            text: "أكيد. تقدرون تتواصلون مباشرة مع صاحب المتجر عبر واتساب. الرقم أدناه تجريبي للعرض فقط.",
-            extra: waButton("ar")
+            text: "أكيد. تقدرون تراسلون صاحب المتجر عبر واتساب. الرقم أدناه تجريبي للعرض فقط.\nللاتصال بالمحل مباشرة استخدموا " + SHOP.phoneAr + ".",
+            extra: waButton("ar") + callButton("ar")
           };
         }
         return {
           lang,
-          text: "Of course. You can message the shop owner on WhatsApp. The number below is a placeholder for this demo only.",
-          extra: waButton("en")
+          text: "Of course. You can message the shop owner on WhatsApp. The number below is a placeholder for this demo only.\nTo call the store directly, use " + SHOP.phoneDisplay + ".",
+          extra: waButton("en") + callButton("en")
+        };
+      }
+
+      if (isCall) {
+        return {
+          lang,
+          text: lang === "ar"
+            ? "رقم متجر إم إس في القرم للاتصال: " + SHOP.phoneAr + "\nالعنوان: " + SHOP.locAr
+            : "MS Department Store, Qurum — call " + SHOP.phoneDisplay + "\nAddress: " + SHOP.locEn,
+          extra: callButton(lang)
         };
       }
 
       if (isHours) {
-        if (lang === "ar") {
-          return {
-            lang,
-            text: "أوقات الدوام (تجريبية):\n" + SHOP.hoursAr + "\n\nالموقع (تجريبي):\n" + SHOP.locAr
-          };
-        }
-        return {
-          lang,
-          text: "Opening hours (sample):\n" + SHOP.hoursEn + "\n\nLocation (placeholder):\n" + SHOP.locEn
-        };
+        return { lang, text: hoursText(lang), extra: callButton(lang) };
       }
 
       if (isGift) {
         let budget = extractBudget(norm);
-        if (budget == null && (want(norm, ["cheap", "sasta", "رخيص"]))) budget = 20;
+        if (budget == null && want(norm, ["cheap", "sasta", "رخيص"])) budget = 20;
         if (budget == null) {
           return {
             lang,
@@ -760,7 +862,7 @@
             text: lang === "ar"
               ? "ضمن " + formatPrice(budget, "ar") + " لا توجد منتجات في البيانات التجريبية. أقرب الخيارات:"
               : "Nothing in the sample catalog is at or under " + formatPrice(budget, "en") + ". Closest options:",
-            extra: `<div class="cards">${cheapest.map((p) => cardHtml(p, lang)).join("")}</div>`
+            extra: cards(cheapest, lang)
           };
         }
         return {
@@ -768,32 +870,92 @@
           text: lang === "ar"
             ? "إليكم " + toArDigits(String(picks.length)) + " اقتراحات للهدايا بـ " + formatPrice(budget, "ar") + " أو أقل (بيانات تجريبية):"
             : "Here are " + picks.length + " gift ideas at " + formatPrice(budget, "en") + " or less (sample data):",
-          extra: `<div class="cards">${picks.map((p) => cardHtml(p, lang)).join("")}</div>`
+          extra: cards(picks, lang)
         };
       }
 
-      if (products.length && (isPrice || isStock || products.length === 1 || isPrice === false)) {
-        if (products.length && (isPrice || isStock || !isCatalog && !genderMen && !genderWomen && !noteOud && !noteFresh && !noteSweet && !noteFloral && !noteWatch && !isGift)) {
-          const list = products.slice(0, 3);
-          const lead = lang === "ar"
-            ? (isStock ? "حالة التوفر (بيانات تجريبية):" : "السعر والتفاصيل (بيانات تجريبية):")
-            : (isStock ? "Stock status (sample data):" : "Price and details (sample data):");
-          return {
-            lang,
-            text: lead,
-            extra: `<div class="cards">${list.map((p) => cardHtml(p, lang)).join("")}</div>`
-          };
-        }
+      const categoryAsked = isLuggage || isCookware || isAppliance || isPerfume || noteWatch || noteOud || noteFresh || noteSweet || noteFloral || genderMen || genderWomen;
+
+      if (products.length && (isPrice || isStock || !categoryAsked)) {
+        const list = products.slice(0, 3);
+        const lead = lang === "ar"
+          ? (isStock ? "حالة التوفر (بيانات تجريبية):" : "السعر والتفاصيل (بيانات تجريبية):")
+          : (isStock ? "Stock status (sample data):" : "Price and details (sample data):");
+        return { lang, text: lead, extra: cards(list, lang) };
       }
 
-      if (genderMen || genderWomen || noteOud || noteFresh || noteSweet || noteFloral || noteWatch) {
-        let items = CATALOG.filter((p) => p.stock !== "out");
+      if (isLuggage || sizeCabin || sizeMedium || sizeLarge || sizeSet) {
+        let items = inStock(CATALOG.filter((p) => p.kind === "luggage"));
+        let titleEn = "Luggage sizes from the sample catalog:";
+        let titleAr = "أحجام الحقائب من الكتالوج التجريبي:";
+        if (sizeSet) {
+          items = items.filter((p) => p.size === "set");
+          titleEn = "Luggage sets in the sample catalog:";
+          titleAr = "أطقم الحقائب في الكتالوج التجريبي:";
+        } else if (sizeCabin) {
+          items = items.filter((p) => p.size === "cabin" || p.notes.includes("cabin"));
+          titleEn = "Cabin and carry-on bags (sample data):";
+          titleAr = "حقائب الكابين والمقصورة (بيانات تجريبية):";
+        } else if (sizeMedium) {
+          items = items.filter((p) => p.size === "medium");
+          titleEn = "Medium suitcases (sample data):";
+          titleAr = "حقائب متوسطة (بيانات تجريبية):";
+        } else if (sizeLarge) {
+          items = items.filter((p) => p.size === "large");
+          titleEn = "Large suitcases (sample data):";
+          titleAr = "حقائب كبيرة (بيانات تجريبية):";
+        } else {
+          const order = ["cabin", "medium", "large", "set"];
+          const picked = [];
+          order.forEach((s) => {
+            const hit = items.find((p) => p.size === s);
+            if (hit) picked.push(hit);
+          });
+          items = picked.length ? picked : items.slice(0, 4);
+        }
+        items = items.slice(0, 4);
+        return {
+          lang,
+          text: lang === "ar" ? titleAr : titleEn,
+          extra: cards(items, lang)
+        };
+      }
+
+      if (isCookware) {
+        let items = inStock(CATALOG.filter((p) => p.kind === "cookware"));
+        if (want(norm, ["set", "طقم", "اطقم", "أطقم"])) {
+          const sets = items.filter((p) => p.notes.includes("set"));
+          if (sets.length) items = sets;
+        }
+        return {
+          lang,
+          text: lang === "ar" ? "أطقم وأواني الطبخ من الكتالوج التجريبي:" : "Cookware and kitchen sets from the sample catalog:",
+          extra: cards(items.slice(0, 4), lang)
+        };
+      }
+
+      if (isAppliance) {
+        const items = inStock(CATALOG.filter((p) => p.kind === "appliance")).slice(0, 4);
+        return {
+          lang,
+          text: lang === "ar" ? "أجهزة المطبخ من الكتالوج التجريبي:" : "Kitchen appliances from the sample catalog:",
+          extra: cards(items, lang)
+        };
+      }
+
+      if (genderMen || genderWomen || noteOud || noteFresh || noteSweet || noteFloral || noteWatch || isPerfume) {
+        let items = inStock(CATALOG.filter((p) => p.kind === "perfume" || p.kind === "watch"));
         let titleEn = "Here are some recommendations from the sample catalog:";
         let titleAr = "إليكم بعض التوصيات من الكتالوج التجريبي:";
         if (noteWatch) {
           items = items.filter((p) => p.kind === "watch");
           titleEn = "Sample watches in the demo catalog:";
           titleAr = "ساعات من الكتالوج التجريبي:";
+        }
+        if (isPerfume && !noteWatch) {
+          items = items.filter((p) => p.kind === "perfume");
+          titleEn = "Perfumes from the sample catalog:";
+          titleAr = "عطور من الكتالوج التجريبي:";
         }
         if (noteOud) {
           items = items.filter((p) => p.notes.includes("oud"));
@@ -813,11 +975,13 @@
           titleAr = "خيارات زهرية من الكتالوج التجريبي:";
         }
         if (genderMen) {
-          items = items.filter((p) => p.gender === "men" || p.gender === "unisex");
+          items = items.filter((p) => p.kind !== "perfume" && p.kind !== "watch" ? true : (p.gender === "men" || p.gender === "unisex"));
+          items = inStock(CATALOG.filter((p) => (p.kind === "perfume" || p.kind === "watch") && (p.gender === "men" || p.gender === "unisex") && (noteWatch ? p.kind === "watch" : noteOud ? p.notes.includes("oud") : true)));
+          if (noteWatch) items = items.filter((p) => p.kind === "watch");
           titleEn = "Suggestions for him (sample data):";
           titleAr = "اقتراحات رجالية (بيانات تجريبية):";
         } else if (genderWomen) {
-          items = items.filter((p) => p.gender === "women" || p.gender === "unisex");
+          items = inStock(CATALOG.filter((p) => (p.kind === "perfume" || p.kind === "watch") && (p.gender === "women" || p.gender === "unisex")));
           titleEn = "Suggestions for her (sample data):";
           titleAr = "اقتراحات نسائية (بيانات تجريبية):";
         }
@@ -833,46 +997,48 @@
         return {
           lang,
           text: lang === "ar" ? titleAr : titleEn,
-          extra: `<div class="cards">${items.map((p) => cardHtml(p, lang)).join("")}</div>`
+          extra: cards(items, lang)
         };
       }
 
       if (isCatalog) {
-        const perf = CATALOG.filter((p) => p.kind === "perfume").slice(0, 4);
-        const watches = CATALOG.filter((p) => p.kind === "watch").slice(0, 2);
-        const items = perf.concat(watches);
+        const picks = [];
+        ["perfume", "watch", "luggage", "cookware", "appliance"].forEach((k) => {
+          const hit = CATALOG.find((p) => p.kind === k && p.stock !== "out");
+          if (hit) picks.push(hit);
+        });
         return {
           lang,
           text: lang === "ar"
-            ? "هذه عينة من الكتالوج التجريبي (١٥ عطراً و٥ ساعات). اسألوا عن أي اسم لمعرفة السعر."
-            : "Here is a sample of the demo catalog (15 perfumes and 5 watches). Ask for any name to see the price.",
-          extra: `<div class="cards">${items.map((p) => cardHtml(p, lang)).join("")}</div>`
+            ? "هذه عينة من الكتالوج التجريبي: عطور، ساعات، حقائب، أطقم طبخ وأجهزة مطبخ. اسألوا عن أي اسم لمعرفة السعر."
+            : "Here is a sample across the demo catalog: perfumes, watches, luggage, cookware and kitchen appliances. Ask for any name to see the price.",
+          extra: cards(picks, lang)
         };
       }
 
       if (products.length) {
-        const list = products.slice(0, 3);
         return {
           lang,
           text: lang === "ar" ? "وجدتكم هذا في الكتالوج التجريبي:" : "I found this in the sample catalog:",
-          extra: `<div class="cards">${list.map((p) => cardHtml(p, lang)).join("")}</div>`
+          extra: cards(products.slice(0, 3), lang)
         };
       }
 
-      if (isStock && !products.length) {
+      if (isStock) {
+        const limited = CATALOG.filter((p) => p.stock === "limited").map((p) => lang === "ar" ? p.nameAr : p.nameEn);
         return {
           lang,
           text: lang === "ar"
-            ? "معظم العينة متوفر. ثلاثة أصناف كميتها محدودة: الحرمين عنبر عود، ديور سوفاج، وتيسو بي آر إكس. عن أي صنف تسألون؟"
-            : "Most of the sample catalog is in stock. Limited items: Al Haramain Amber Oud, Dior Sauvage, and Tissot PRX. Which item are you asking about?"
+            ? "معظم العينة متوفر. الأصناف المحدودة: " + limited.join("، ") + ". عن أي صنف تسألون؟"
+            : "Most of the sample catalog is in stock. Limited items: " + limited.join(", ") + ". Which item are you asking about?"
         };
       }
 
       return {
         lang,
         text: lang === "ar"
-          ? "عذراً، ما فهمت طلبكم تماماً. تقدرون تسألون عن السعر، التوفر، أوقات الدوام، أو هدية حسب الميزانية. أو اضغطوا أحد الخيارات التالية."
-          : "Sorry, I did not quite catch that. You can ask about a price, stock, shop hours, or a gift under a budget — or tap one of the suggestions below."
+          ? "عذراً، ما فهمت طلبكم تماماً. تقدرون تسألون عن السعر، التوفر، الحقائب، أطقم الطبخ، الأجهزة، أوقات الدوام، أو هدية حسب الميزانية. أو اضغطوا أحد الخيارات التالية."
+          : "Sorry, I did not quite catch that. You can ask about a price, stock, luggage, cookware, appliances, shop hours, or a gift under a budget — or tap one of the suggestions below."
       };
     }
 
@@ -912,7 +1078,7 @@
 
     setChips("en");
     addBot(
-      "As-salamu alaykum! Welcome to Oud & Time Demo Store in Muscat.\nI can help with prices, stock, gift ideas and recommendations — in English or Arabic.\nThis catalog is sample data for a demo only. How can I help?",
+      "As-salamu alaykum! Welcome to MS Department Store, Qurum, Muscat.\nI can help with prices, stock, gift ideas, luggage, cookware, kitchen appliances, perfumes and watches — in English or Arabic.\nProduct prices and stock are sample data for this demo only. How can I help?",
       "en"
     );
   })();
