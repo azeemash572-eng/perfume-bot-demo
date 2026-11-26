@@ -13,7 +13,7 @@ const PER_MIN = Number(process.env.PER_MIN || 12);
 const PER_DAY = Number(process.env.PER_DAY || 150);
 const GLOBAL_PER_DAY = Number(process.env.GLOBAL_PER_DAY || 2000);
 
-if (!process.env.GEMINI_API_KEY) { console.error("GEMINI_API_KEY missing in env"); process.exit(1); }
+if (!process.env.GEMINI_API_KEY) console.error("GEMINI_API_KEY missing in env — /chat will return 503 until it is set");
 
 const byId = new Map(CATALOG.map((p) => [p.id, p]));
 const fmt = (n) => Number(n).toFixed(3);
@@ -123,6 +123,7 @@ const server = http.createServer(async (req, res) => {
   if (req.method !== "POST" || req.url !== "/chat") return send(res, 404, { error: "not found" });
   const origin = req.headers.origin;
   if (!origin || !ALLOWED.includes(origin)) return send(res, 403, { error: "origin not allowed" });
+  if (!process.env.GEMINI_API_KEY) return send(res, 503, { error: "not_configured" });
 
   const ip = (req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.socket.remoteAddress || "?").toString().split(",")[0].trim();
   const lim = limited(ip);
